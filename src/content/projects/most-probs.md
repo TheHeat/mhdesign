@@ -1,0 +1,13 @@
+---
+title: "Most Probs"
+client: "Personal Project"
+date: 2023.09
+image: { 
+	path: "./posters/most-probs-poster.png" 
+	}
+---
+
+# Most Probs artwork
+
+The track is based by the idea of unexpected futures (multiverses, possibilities and probabilities). Which is a bt woo-woo for me really.
+I thought of <a href="https://en.wikipedia.org/wiki/Magic_8_Ball">'The Magic 8 Ball'</a> which is a portal into thos possible futures and alternate realities, but you know, contained.

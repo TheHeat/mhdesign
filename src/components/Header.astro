@@ -1,0 +1,81 @@
+---
+
+import Icon from "./Icon.astro";
+
+const socials = [
+	{label:'LinkedIn', url:'https://www.linkedin.com/in/marcheatley', icon: "linkedin"},
+	{label: 'CodePen', url:'https://codepen.io/TheHeat', icon:'codepen'}
+
+]
+---
+
+<header>
+	<div class="site-title">
+		<a href="/">
+			<span aria-roledescription="site title" class="visually-hidden">Marc Heatley Design</span>
+			<Icon icon='mh'/>
+		</a>
+	</div>
+	<ul class="links">
+		{socials.map(link=><li><a href={link.url}>
+			<span class="visually-hidden">
+			{link.label}
+			</span>
+			<Icon icon={link.icon}/></a></li>)}
+	</ul>
+</header>
+
+<style>
+	header{
+		padding: var(--length-m);
+		color: var(--color-surface);
+		text-align: center;
+		@container (width > 20rem){
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+	a{
+		color: currentColor;
+	}
+	.site-title{
+
+display: flex;
+justify-content: center;
+padding: var(--length-m);
+		svg{
+	
+			display: block;
+			aspect-ratio: 1;
+			width: 5rem;
+			height: auto;
+
+		}
+	}
+	
+	
+
+
+	.links{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		gap: .5em;
+		fill: currentColor;
+		width: max-content;
+		margin: auto;
+				@container (width > 20rem){
+
+					margin: 0;
+		}
+	}
+
+	.links a {
+		aspect-ratio: 1;
+		display: block;
+		width: 2rem;
+		height: 2rem;
+	}
+</style>

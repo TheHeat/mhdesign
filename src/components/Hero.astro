@@ -1,0 +1,50 @@
+---
+import Image from 'astro/components/Image.astro'
+import photo from '../assets/img/heatley.jpg'
+---
+
+<main>
+
+	<Image src={photo} alt=""/>
+
+			<h1>Hello! I'm <span class="highlight">Marc Heatley</span>. I talk about designing things (a&nbsp;lot) and then (eventually) design things.</p>
+				Here are some things I designed &DownArrow;</h1>
+			</div>
+		</main>
+
+		<style>
+
+			main{
+				background-color:var(--color-text);
+				color: var(--color-surface);
+				padding: var(--length-l);
+				display: grid;
+				gap: 1rem;
+				min-height: 50lvh;
+				align-content: center;
+				transition: .2s;
+
+				@media (orientation:portrait) {
+					min-height: 100vw;
+					max-height: 90lvh;
+				}
+
+			}
+			img{
+				width:6rem;
+				height:6rem;
+				border-radius: 50%;
+				border: solid medium;
+
+			}
+			h1{
+				font-size: clamp(2rem, (1rem + 3vw), 10vw);
+				margin: 0;
+				text-wrap: balance;
+				font-weight: 200;
+			}
+
+			.highlight{
+				font-weight: 600;
+			}
+		</style>

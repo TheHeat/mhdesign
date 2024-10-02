@@ -1,0 +1,32 @@
+---
+
+import { getCollection } from "astro:content";
+import ProjectTeaser from '../components/ProjectTeaser.astro';
+
+const projects = await getCollection("projects");
+
+---
+<ol>
+	{projects.sort((a,b)=>b.data.date - a.data.date).map(project=><li>
+
+		<ProjectTeaser project={project} />
+	</li>	
+)}
+</ol>
+
+
+<style>
+	ol{
+		list-style: none;
+		margin: 0;
+		padding: 1rem;
+		display: grid;
+		gap:1rem;
+
+		@container (width > 20rem){
+
+		grid-template-columns:repeat(auto-fill, minmax(18rem, 1fr));
+		}
+
+	}
+</style>
