@@ -16,11 +16,11 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title}>
 
+  <div class="posterBox">
+    <Image inferSize={true} class='poster' src={entry.data.image.path} alt="featured"/>
+  </div>
   <main>
 
-    <div class="posterBox">
-      <Image inferSize={true} class='poster' src={entry.data.image.path} alt="featured"/>
-    </div>
 
     <div class="content">
       <Content />
@@ -60,6 +60,7 @@ main{
   background-image:  linear-gradient(var(--color-surface) 2px, transparent 2px), linear-gradient(90deg, var(--color-surface) 2px, transparent 2px), linear-gradient(var(--color-surface) 1px, transparent 1px), linear-gradient(90deg, var(--color-surface) 1px, #d3bebe 1px);
   background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
 background-position: center;
+background-attachment: fixed;
 padding: var(--length-m);
   @container (width > 60ch) {
     padding: var(--length-l);
