@@ -11,7 +11,7 @@ const projectCollection = defineCollection({
 			client: z.string(),
 			date: z.number(),
 			image: z.object({
-				path: image(),
+				src: image(),
 			}),
 		}),
 });

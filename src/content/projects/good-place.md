@@ -4,7 +4,7 @@ excerpt: "Comms for good"
 client: "Good Place Comms"
 date: 2023.09
 image: { 
-	path: "./posters/good-place-poster.png" 
+	src: "./posters/good-place-poster.png" 
 	}
 ---
 

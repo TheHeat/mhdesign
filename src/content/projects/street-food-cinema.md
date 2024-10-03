@@ -4,7 +4,7 @@ excerpt: "For those who like their food on the go!"
 client: "Street Food Cinema"
 date: 2019.09
 image: { 
-	path: "./posters/sfc-poster.png" 
+	src: "./posters/sfc-poster.png" 
 	}
 ---
 

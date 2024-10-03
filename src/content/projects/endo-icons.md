@@ -4,7 +4,7 @@ excerpt: "Icon set designed to make information on endometriosis more accessible
 client: "CFRR"
 date: 2024.04
 image: { 
-	path: "./posters/endo-icons-poster.png" 
+	src: "./posters/endo-icons-poster.png" 
 	}
 ---
 

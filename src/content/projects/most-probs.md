@@ -4,7 +4,7 @@ excerpt: "Great unexpectations"
 client: "Personal Project"
 date: 2023.09
 image: { 
-	path: "./posters/most-probs-poster.png" 
+	src: "./posters/most-probs-poster.png" 
 	}
 ---
 

@@ -4,7 +4,7 @@ excerpt: "You make your own luck..."
 client: "Personal Project"
 date: 2023.12
 image: { 
-	path: "./posters/unlucky-poster.png" 
+	src: "./posters/unlucky-poster.png" 
 	}
 ---
 

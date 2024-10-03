@@ -9,7 +9,7 @@ const {project} = Astro.props;
 <div class="wrapper">
 	
 	
-	<Image loading="eager" class="image" src={project.data.image.path} alt={`Poster for the ${project.data.title} project`}/>
+	<Image loading="eager" class="image" src={project.data.image.src} alt={`Poster for the ${project.data.title} project`}/>
 
 
 
@@ -26,8 +26,9 @@ const {project} = Astro.props;
 	.wrapper{
 		background-size: cover;
 		background-position: 50%;
-		border:solid .5rem white;
+		
 		align-content: end;
+		border: solid var(--length-s) white;
 		border-radius: .1em;
 		display: grid;
 		grid-template-rows: 1fr min-content;

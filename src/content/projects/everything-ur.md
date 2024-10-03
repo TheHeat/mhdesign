@@ -4,7 +4,7 @@ excerpt: "Artwork for a music release"
 client: "Personal Project"
 date: 2024.06
 image: { 
-	path: "./posters/eur-poster.png" 
+	src: "./posters/eur-poster.png" 
 	}
 ---
 

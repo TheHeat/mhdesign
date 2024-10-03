@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Caprasimo&display=swap");
 
 :root {
-	--color-surface: rgb(238, 228, 228);
+	--color-surface: rgb(241, 232, 232);
 	--color-text: #2d3a41;
 	--color-link: #205699;
+
+
+	--length-s: 0.5rem;
 	--length-m: 1rem;
 	--length-l: 2rem;
 
-	--font-fancy: "Caprasimo", serif;
 }
 
 *,
@@ -61,4 +62,5 @@ a {
 .body-image {
 	width: 100%;
 	height: auto;
+	border:solid 1rem white;
 }
