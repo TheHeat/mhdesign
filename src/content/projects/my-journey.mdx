@@ -6,9 +6,10 @@ image: {
 	path: "./posters/my-journey-poster.png" 
 	}
 ---
-
+import { YouTube } from "astro-embed";
 import { Image } from "astro:assets";
 import beach from "./images/my-journey-beach.jpg";
+
 
 # My Journey
 
@@ -17,10 +18,11 @@ users through ten exercises that help them to process their feelings and ease ac
 of an unfulfilled wish for children. Research backed and based on Contextual Cognitive
 Behavioural Therapy, users consider their future life without a child.
 
-<Image
-	class="body-image"
-	src={beach}
-	alt="an illistration of a calm sandy beach"
+<YouTube
+	class="video"
+	posterQuality="max"
+	id="wB4kionWMko"
 />
 
 I designed a visual language for the application based on a ‘journey’ metaphor. This included a series of illustrations of waypoints and destinations as well as a set of travel-based icons to bring the application to life.
+

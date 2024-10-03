@@ -9,6 +9,4 @@ image: {
 
 # Icon set for Endometriosis Cymru
 
-Created as part of a project focussed on making the site more accessible, as well as creating an extensive set of 'Easy Read' content.
-
-These icons represent a number of key ideas - from the disease and it's symptoms to education, community and communication.
+Created as part of a project focussed on making the site more accessible, as well as creating an extensive set of 'Easy Read' content. These icons represent a number of key ideas from across the site, including the disease and it's symptoms, education, community and communication.

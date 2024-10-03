@@ -16,4 +16,4 @@ The mark is built around stylised lettering of the the word 'GOOD' and suggests 
 Conceptually the logo aligns with many well established themes in charitable and third-sector branding, but stylistically it is
 cleaner and more precise.
 
-This coming together of ideals and execution characterises the work of Good Place Comms.
+Bringing together ideals and execution characterises the work of Good Place Comms.
