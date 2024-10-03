@@ -7,7 +7,7 @@ image: {
 	}
 ---
 
-# Icon set for endometriosis.cymru
+# Icon set for Endometriosis Cymru
 
 Created as part of a project focussed on making the site more accessible, as well as creating an extensive set of 'Easy Read' content.
 

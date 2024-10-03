@@ -31,6 +31,10 @@ body {
 	box-sizing: border-box;
 }
 
+h1 {
+	text-wrap: balance;
+}
+
 p {
 	line-height: 1.6;
 }
