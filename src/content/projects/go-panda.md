@@ -7,4 +7,8 @@ image: {
 	}
 ---
 
-# Here is my _great_ post!
+# Panda
+
+Designed as a mascot for a local removals company.
+
+Sadly this lovely guy is out of commission nowadays (I don't think it's his fault though).

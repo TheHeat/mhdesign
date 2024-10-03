@@ -1,21 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Caprasimo&display=swap");
 
 :root {
-	--color-accent: hwb(62 6% 22%);
-	--color-accent-2: hsl(18, 65%, 45%);
-
-	--color-accent-contrast: rgba(0, 0, 0, 0.413);
 	--color-surface: rgb(238, 228, 228);
 	--color-text: #2d3a41;
+	--color-link: #205699;
 	--length-m: 1rem;
 	--length-l: 2rem;
 
 	--font-fancy: "Caprasimo", serif;
 }
 
-* {
-	box-sizing: border-box;
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 }
+
 html {
 	font-family: system-ui, sans-serif;
 	margin: 0;
@@ -28,10 +28,14 @@ body {
 	color: var(--color-text);
 	font-weight: 400;
 	font-size: 1.2rem;
+	box-sizing: border-box;
 }
 
 p {
 	line-height: 1.6;
+}
+a {
+	color: var(--color-link);
 }
 .visually-hidden {
 	clip: rect(0 0 0 0);
@@ -48,4 +52,9 @@ p {
 	max-width: 100%;
 	background-color: black;
 	border-radius: 0.2em;
+}
+
+.body-image {
+	width: 100%;
+	height: auto;
 }

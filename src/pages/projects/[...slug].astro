@@ -11,13 +11,17 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-
+const image = entry.data.image.path
 ---
 
 <Layout title={entry.data.title}>
 
   <div class="posterBox">
-    <Image inferSize={true} class='poster' src={entry.data.image.path} alt="featured"/>
+    <Image 
+      src={image} 
+      inferSize={true} 
+      class='poster' 
+      alt="featured"/>
   </div>
   <main>
 
