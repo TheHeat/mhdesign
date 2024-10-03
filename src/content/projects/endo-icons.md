@@ -1,5 +1,6 @@
 ---
 title: "Endo Cymru Icons"
+excerpt: "Icon set designed to make information on endometriosis more accessible"
 client: "CFRR"
 date: 2024.04
 image: { 

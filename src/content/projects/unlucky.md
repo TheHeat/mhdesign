@@ -1,5 +1,6 @@
 ---
 title: "Unlucky"
+excerpt: "You make your own luck..."
 client: "Personal Project"
 date: 2023.12
 image: { 

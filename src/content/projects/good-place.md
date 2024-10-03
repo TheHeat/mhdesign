@@ -1,5 +1,6 @@
 ---
 title: "Good"
+excerpt: "Comms for good"
 client: "Good Place Comms"
 date: 2023.09
 image: { 

@@ -1,5 +1,6 @@
 ---
 title: "Everything UR"
+excerpt: "Artwork for a music release"
 client: "Personal Project"
 date: 2024.06
 image: { 

@@ -9,7 +9,7 @@ const {project} = Astro.props;
 <div class="wrapper">
 	
 	
-	<Image class="image" src={project.data.image.path} alt={`Poster image for ${project.data.title}`}/>
+	<Image loading="eager" class="image" src={project.data.image.path} alt={`Poster for the ${project.data.title} project`}/>
 
 
 

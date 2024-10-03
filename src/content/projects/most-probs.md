@@ -1,5 +1,6 @@
 ---
 title: "Most Probs"
+excerpt: "Great unexpectations"
 client: "Personal Project"
 date: 2023.09
 image: { 

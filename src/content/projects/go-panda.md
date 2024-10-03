@@ -1,5 +1,6 @@
 ---
 title: "Panda"
+excerpt: "Cute panda"
 client: "Go Panda"
 date: 2023.05
 image: { 
