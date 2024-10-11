@@ -1,0 +1,47 @@
+---
+const date = Astro.props.date
+const client = Astro.props.client
+---
+
+<table>
+        <tr>
+          <th>Client</th>
+          
+          
+          <td>{client}</td>
+        </tr>
+        <tr>
+          
+          <th>Date</th>
+          <td>{date}</td>
+        </tr>
+      </table>
+
+
+<style>
+
+
+			  table{
+    font-family: monospace;
+    font-size: smaller;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+          border: solid;
+
+  }
+  th, td{
+       padding: .5em;
+  }
+
+  tr:nth-child(1n + 2)  {th,  td{
+      border-top: solid;
+ 
+    }}
+  th{
+    font-weight: normal;
+    text-transform: uppercase;
+    width: 4rem;
+    border-right: solid;
+  }
+</style>

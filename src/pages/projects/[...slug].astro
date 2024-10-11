@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Layout from '../../layouts/Home.astro';
 
 import { getCollection } from 'astro:content';
+import ProjectMeta from '../../components/ProjectMeta.astro';
 export async function getStaticPaths() {
   const projectEntries = await getCollection('projects');
   return projectEntries.map(entry => ({
@@ -16,6 +17,7 @@ const image = entry.data.image
 
 <Layout title={entry.data.title} description={entry.data.excerpt}>
 
+  <main>
   <div class="posterBox">
     <Image 
       src={image.src} 
@@ -24,38 +26,39 @@ const image = entry.data.image
       class='poster' 
       alt="featured"/>
   </div>
-  <main>
-
-
-    <div class="content">
-      <Content />
+  
+  
+  <Content />
       
       
-      <table>
-        <tr>
-          <th>Client</th>
-          
-          
-          <td>{entry.data.client}</td>
-        </tr>
-        <tr>
-          
-          <th>Date</th>
-          <td>{entry.data.date}</td>
-        </tr>
-      </table>
-    </div>
+<ProjectMeta date={entry.data.date} client={entry.data.client} />
   </main>
 </Layout>
 
 
-<style>
+<style is:global>
 
 main{
-  padding: var(--length-l);
+  --inline-padding: var(--length-m);
+	--content-width: 60ch;
+  --breakout-width: 10ch;
 
+  padding-block-end: var(--length-l);
+  
+  display: grid;
+	grid-template-columns:
+		[full-width-start]
+    minmax(var(--inline-padding), 1fr)
+    [breakout-start]
+    minmax(0, var(--breakout-width))
+		[content-start] min((100% - var(--inline-padding) * 2), var(--content-width)) [content-end]
+     minmax(0, var(--breakout-width))
+     [breakout-end]
+		minmax(var(--inline-padding), 1fr) [full-width-end];
 }
+
 .posterBox{
+  grid-column: full-width;
   display: flex;
   justify-content: center;
   background-color: rgba(0,0,0,0.1);
@@ -84,33 +87,16 @@ padding: var(--length-m);
     }
 }
 
-.content{
-  max-width: 70ch;
-  margin: auto;
+
+main > *{
+  grid-column: content;
 }
 
-  table{
-    font-family: monospace;
-    font-size: smaller;
-    width: 100%;
-    text-align: left;
-    border-collapse: collapse;
-          border: solid;
 
-  }
-  th, td{
-       padding: .5em;
-  }
-
-  tr:nth-child(1n + 2)  {th,  td{
-      border-top: solid;
- 
-    }}
-  th{
-    font-weight: normal;
-    text-transform: uppercase;
-    width: 4rem;
-    border-right: solid;
-  }
+main > .video,
+main > .lite-youtube, 
+main > .body-image {
+  grid-column: breakout;
+}
 
 </style>
