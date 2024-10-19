@@ -1,0 +1,58 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "projects",
+      "previewPath": "'projects'",
+      "pageBundle": false,
+      "clearEmpty": true,
+      "fields": [
+        {
+          "name": "title",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "excerpt",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "client",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "date",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "image",
+          "type": "image",
+          "required": true,
+          "isPreviewImage": true
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "projects",
+      "path": "[[workspace]]/src/content/projects",
+      "contentTypes": [
+        "projects"
+      ]
+    }
+  ],
+  "frontMatter.content.publicFolder": {
+    "path": "src/assets",
+    "relative": true
+  },
+  "frontMatter.git.enabled": true
+}
