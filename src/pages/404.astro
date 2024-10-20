@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Home.astro"
+import Hero from "../components/Hero.astro"
+
+---
+
+<Layout>
+	<Hero>
+		<h1 class="litteh1"><span class="highlight">Error 404</span></h1>
+		<figure>
+			<blockquote>I'm somewhere where I don't know where I am</blockquote>
+			<figcaption class="lowlight">- Homer J Simpson</figcaption>
+		</figure>
+	</Hero>
+</Layout>
+
+
+<style>
+
+.litteh1{
+	font-size: 1.5rem;
+}
+
+	figure,
+	blockquote{
+		padding: 0;
+		margin: 0;
+	}
+
+	figure{
+		display: grid;
+		gap:var(--length-m);
+	}
+	blockquote{
+		text-indent: -.3em;
+		font-size: clamp(2rem, (1rem + 3vw), 10vw);
+		font-weight: 200;
+		text-wrap: balance;
+		&::before{
+			content: open-quote
+		}
+		&::after{
+			content: close-quote;
+		}
+	}
+</style>
