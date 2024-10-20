@@ -1,0 +1,22 @@
+[
+	{
+		"tag": "ui+ux",
+		"intro": "I create friendly, compelling user-interfaces for digital products. I can work in prototyping tools for handover to front-end devs or in HTML and CSS."
+	},
+	{
+		"tag": "branding",
+		"intro": "From simple logo design to more complete branding work. I collaborate with clients to find strong, usable visual identities."
+	},
+	{
+		"tag": "icons",
+		"intro": "Simplicity is hard. I can help you to curate or create icons that communicate complex or abstract ideas to your users."
+	},
+	{
+		"tag": "illustration",
+		"intro": "My illustration work is most often vector art, but I will work with whatever tool is right for the job - from layered photoshop compositions to 3D models."
+	},
+	{
+		"tag": "motion-graphics",
+		"intro": "I can bring designs to life from animated logos and idents to educational and explainer videos."
+	}
+]

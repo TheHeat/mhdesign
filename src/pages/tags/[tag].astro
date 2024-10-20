@@ -4,6 +4,9 @@ import { getCollection } from "astro:content";
 import BaseLayout from '../../layouts/Home.astro';
 import ProjectsList from "../../components/ProjectsList.astro";
 import Hero from "../../components/Hero.astro";
+import Tags from "../../components/Tags.astro";
+
+import tagTexts from "../../data/tags.json";
 
 export async function getStaticPaths({}) {
   const allProjects = await getCollection("projects");
@@ -33,13 +36,18 @@ export async function getStaticPaths({}) {
 const { tag } = Astro.params;
 const { projects } = Astro.props;
 
+const tagText = tagTexts.find(i => i['tag'] === tag)
+
 ---
 <BaseLayout pageTitle={tag}>
 
   <Hero>
-    <h1>{projects.length}&times; projects tagged <span class="highlight">{tag}</span></h1>
-    <a class="lowlight" href="/tags">&LeftArrow; view all tags</a>
+    <h1 class="littleh1">{projects.length}&times; projects tagged <span class="highlight">{tag}</span></h1>
+    {tagText.intro && <p class="bigh1">{tagText.intro}</p>}
   </Hero>
 
+  <div class="tags-wrapper">
+    <Tags activeTag={tag} />
+  </div>
 	<ProjectsList projects={projects} />
 </BaseLayout>

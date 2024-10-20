@@ -30,7 +30,7 @@ const { title, description, form=true } = Astro.props;
 		</div>
 	</body>
 </html>
-<style>
+<style is:global>
 	.layout{
 		display: grid;
 		min-height: 100lvh;
@@ -56,6 +56,10 @@ const { title, description, form=true } = Astro.props;
 		container-type: inline-size;
 	}
 
+
+	.tags-wrapper{
+		padding: var(--length-m);
+	}
 
 
 </style>

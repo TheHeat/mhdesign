@@ -11,17 +11,21 @@ const processedTags = allTags.reduce((acc, tag) => {
     [tag]: value + 1,
   };
 
-  const sortedTags = Object.fromEntries(
-    Object.entries(pTags).sort((a, b) => b[1] - a[1]),
-  );
-
   return pTags;
 }, {});
 
-const { showCount, displayNumber } = Astro.props;
+const { activeTag } = Astro.props;
 ---
 		<ul>
-			{ Object.entries(processedTags).map(([key, val])=><li><a class="tag" href={`/tags/${key}`}>{`${key} (${val})`}</a></li>)}
+			{ Object.entries(processedTags).map(([key, val])=>
+			<li>
+
+			{activeTag && activeTag === key ? 
+				<a class="tag active" href="/#tags">{`${key} (${val})`}</a> :
+				<a class="tag" href={`/tags/${key}`}>{`${key} (${val})`}</a>
+			}
+			</li>
+				)}
 		</ul>
 	</div>
 
@@ -40,11 +44,15 @@ const { showCount, displayNumber } = Astro.props;
 	.tag{
 		font-family: monospace;
 		display: block;
-		background-color: var(--color-accent);
+		background-color: var(--color-text);
 		color: var(--color-surface);
 		text-decoration: none;
 		padding:var(--length-s) var(--length-m);
 		border-radius: .2em;
+	}
+
+	.tag.active{
+		background-color: var(--color-accent);
 	}
 
 

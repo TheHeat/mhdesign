@@ -14,20 +14,14 @@ import Tags from "../components/Tags.astro";
 	title="Marc Heatley"
 	description="This is my personal design portfolio. Some favourites from 1,000,000 years making pictures for money.">
 	<Hero>
-		<h1>Hello! I'm <span class="highlight">Marc Heatley</span>. I think and talk about designing things <span class="lowlight">(a&nbsp;lot)</span> and then <span class="lowlight">(eventually)</span> design things.</p>
+		<h1 class="bigh1">Hello! I'm <span class="highlight">Marc Heatley</span>. I think and talk about designing things <span class="lowlight">(a&nbsp;lot)</span> and then <span class="lowlight">(eventually)</span> design things.</p>
 	Here are some things I designed &DownArrow;</h1>
-	</Hero>
+</Hero>
+<div id="tags" class="tags-wrapper">
+	<Tags/>
+</div>
 	<ProjectsList projects={projects}/>
 
-	<div class="tags">
-		<Tags/>
-	</div>
 </Layout>
-
-<style>
-	.tags{
-		padding: var(--length-m);
-	}
-</style>
 
 

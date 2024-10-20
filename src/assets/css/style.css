@@ -7,6 +7,8 @@
 	--length-s: 0.5rem;
 	--length-m: 1rem;
 	--length-l: 2rem;
+
+	scroll-behavior: smooth;
 }
 
 *,
