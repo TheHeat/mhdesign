@@ -10,11 +10,14 @@ const projectTypes = [
 	<p>Use this form to get in touch. You can ask me a question, request a quote, all that stuff.</p>
 	
 	<form 
+	name="MHD Contact Form"
 	method="POST" 
 	data-netlify="true"
 	  netlify-honeypot="useless-number"
 
 		>
+<input type="hidden" name="subject" value="New lead from %{formName} (%{submissionId})" />
+
 		<div class="field">
 			<div class="label">How can I help?</div>
 
