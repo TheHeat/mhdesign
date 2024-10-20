@@ -1,0 +1,36 @@
+---
+
+import { getCollection } from "astro:content";
+import BaseLayout from '../../layouts/Home.astro';
+import ProjectsList from "../../components/ProjectsList.astro";
+import Hero from "../../components/Hero.astro";
+
+export async function getStaticPaths() {
+  const allProjects = await getCollection('projects');
+
+  const uniqueTags = [...new Set(allProjects.map((project) => project.data.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredProjects = allProjects.filter((project) => project.data.tags.includes(tag));
+  
+    return {
+      params: { tag },
+      props: { posts: filteredProjects },
+    };
+  });
+  
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+---
+<BaseLayout pageTitle={tag}>
+
+  <Hero>
+    <h1>{posts.length}&times; projects tagged <span class="highlight">{tag}</span></h1>
+    <a class="lowlight" href="/">&LeftArrow; view all</a>
+  </Hero>
+
+	<ProjectsList projects={posts} />
+</BaseLayout>

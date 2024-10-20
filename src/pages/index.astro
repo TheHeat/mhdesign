@@ -1,14 +1,22 @@
 ---
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects");
+
 import Layout from '../layouts/Home.astro';
 import ProjectsList from '../components/ProjectsList.astro';
 import Hero from '../components/Hero.astro';
+
+
 ---
 
 <Layout
 	title="Marc Heatley"
 	description="This is my personal design portfolio. Some favourites from 1,000,000 years making pictures for money.">
-	<Hero/>
-	<ProjectsList/>
+	<Hero>
+		<h1>Hello! I'm <span class="highlight">Marc Heatley</span>. I think and talk about designing things <span class="lowlight">(a&nbsp;lot)</span> and then <span class="lowlight">(eventually)</span> design things.</p>
+	Here are some things I designed &DownArrow;</h1>
+	</Hero>
+	<ProjectsList projects={projects}/>
 </Layout>
 
 

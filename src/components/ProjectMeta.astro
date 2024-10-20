@@ -1,19 +1,24 @@
 ---
-const date = Astro.props.date
-const client = Astro.props.client
+
+const {date, client, tags} = Astro.props.project
 ---
 
 <table>
         <tr>
           <th>Client</th>
-          
-          
           <td>{client}</td>
         </tr>
         <tr>
-          
           <th>Date</th>
           <td>{date}</td>
+        </tr>
+            <tr>
+
+          {tags &&
+          <>
+          <th>Tags</th>
+          <td><div class="tags">{tags.map(tag=><a href={`../tags/${tag}`}>{tag}</a>)}</div></td>
+          <>}
         </tr>
       </table>
 
@@ -43,5 +48,10 @@ const client = Astro.props.client
     text-transform: uppercase;
     width: 4rem;
     border-right: solid;
+  }
+
+  .tags{
+    display: inline-flex;
+    gap:.5em
   }
 </style>

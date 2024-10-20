@@ -6,16 +6,16 @@ import { getCollection } from 'astro:content';
 import ProjectMeta from '../../components/ProjectMeta.astro';
 export async function getStaticPaths() {
   const projectEntries = await getCollection('projects');
-  return projectEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+  return projectEntries.map(project => ({
+    params: { slug: project.slug }, props: { project },
   }));
 }
-const { entry } = Astro.props;
-const { Content } = await entry.render();
-const image = entry.data.image
+const { project } = Astro.props;
+const { Content } = await project.render();
+const image = project.data.image
 ---
 
-<Layout title={entry.data.title} description={entry.data.excerpt}>
+<Layout title={project.data.title} description={project.data.excerpt}>
 
   <main>
   <div class="posterBox">
@@ -31,7 +31,7 @@ const image = entry.data.image
   <Content />
       
       
-<ProjectMeta date={entry.data.date} client={entry.data.client} />
+<ProjectMeta project={project.data} />
   </main>
 </Layout>
 
@@ -64,7 +64,7 @@ main{
   background-color: rgba(0,0,0,0.1);
   transition: .2s;
 
-  opacity: 0.8;
+
   background-image:  linear-gradient(var(--color-surface) 2px, transparent 2px), linear-gradient(90deg, var(--color-surface) 2px, transparent 2px), linear-gradient(var(--color-surface) 1px, transparent 1px), linear-gradient(90deg, var(--color-surface) 1px, #d3bebe 1px);
   background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
 background-position: center;

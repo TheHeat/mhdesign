@@ -48,6 +48,10 @@
       "contentTypes": [
         "projects"
       ]
+    },
+    {
+      "title": "posters",
+      "path": "[[workspace]]/src/content/projects/posters"
     }
   ],
   "frontMatter.content.publicFolder": {

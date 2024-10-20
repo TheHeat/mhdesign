@@ -6,10 +6,8 @@
 
 
 <main>
-	<h1>Hello! I'm <span class="highlight">Marc Heatley</span>. I think and talk about designing things <span class="lowlight">(a&nbsp;lot)</span> and then <span class="lowlight">(eventually)</span> design things.</p>
-	Here are some things I designed &DownArrow;</h1>
-			</div>
-		</main>
+<slot/>
+</main>
 
 		<style>
 
@@ -29,26 +27,25 @@
 					min-height: 60vw;
 				}
 
-			}
-			img{
-				width:6rem;
-				height:6rem;
-				border-radius: 50%;
-				border: solid medium;
+				h1{
+					font-size: clamp(2rem, (1rem + 3vw), 10vw);
+					margin: 0;
+					text-wrap: balance;
+					font-weight: 200;
+					max-width: 30ch;
+				}
+				.highlight{
+					font-weight: 600;
+				}
+				.lowlight{
+					opacity: .5;
+				}
 
-			}
-			h1{
-				font-size: clamp(2rem, (1rem + 3vw), 10vw);
-				margin: 0;
-				text-wrap: balance;
-				font-weight: 200;
-				max-width: 30ch;
-			}
-
-			.highlight{
-				font-weight: 600;
-			}
-			.lowlight{
-				opacity: .5;
+				a{
+					font-weight: 200;
+					font-size: clamp(1.5rem, (1rem + 1.5vw), 7vw);
+					color: currentColor;
+					text-decoration: none;
+				}
 			}
 		</style>

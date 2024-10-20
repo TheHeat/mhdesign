@@ -1,10 +1,7 @@
 ---
-
-import { getCollection } from "astro:content";
 import ProjectTeaser from '../components/ProjectTeaser.astro';
 
-const projects = await getCollection("projects");
-
+const {projects} = Astro.props;
 ---
 <ol>
 	{projects.sort((a,b)=>b.data.date - a.data.date).map(project=><li>

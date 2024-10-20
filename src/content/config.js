@@ -13,6 +13,7 @@ const projectCollection = defineCollection({
 			image: z.object({
 				src: image(),
 			}),
+			tags: z.array(z.string()).optional(),
 		}),
 });
 
