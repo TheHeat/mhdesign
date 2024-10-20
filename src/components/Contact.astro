@@ -9,7 +9,12 @@ const projectTypes = [
 	<h2>Don&CloseCurlyQuote;t be shy - say hi!</h2>
 	<p>Use this form to get in touch. You can ask me a question, request a quote, all that stuff.</p>
 	
-	<form method="POST" data-netlify="true">
+	<form 
+	method="POST" 
+	data-netlify="true"
+	  netlify-honeypot="useless-number"
+
+		>
 		<div class="field">
 			<div class="label">How can I help?</div>
 
@@ -22,6 +27,11 @@ const projectTypes = [
 		<div class="field">
 			<label for="email">Your email address</label>
 			<input name="email" id="email" type="email" required>
+		</div>
+
+		<div class="visually-hidden">
+			<label for="useless-number">Ignore this field if you're a human</label>
+			<input name="useless-number" id="useless-number" type="number">
 		</div>
 
 		
