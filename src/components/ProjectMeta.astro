@@ -17,7 +17,7 @@ const {date, client, tags} = Astro.props.project
           {tags &&
           <>
           <th>Tags</th>
-          <td><div class="tags">{tags.map(tag=><a href={`../tags/${tag}`}>{tag}</a>)}</div></td>
+          <td><div class="tags">{tags.map(tag=><a href={`./tags/${tag}`}>{tag}</a>)}</div></td>
           <>}
         </tr>
       </table>
