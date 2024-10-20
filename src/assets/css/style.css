@@ -30,6 +30,10 @@ body {
 	box-sizing: border-box;
 }
 
+@view-transition {
+	navigation: auto;
+}
+
 h1,
 h2 {
 	text-wrap: balance;

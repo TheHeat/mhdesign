@@ -18,12 +18,13 @@ const image = project.data.image
 <Layout title={project.data.title} description={project.data.excerpt}>
 
   <main>
-  <div class="posterBox">
+  <div class="posterBox" id="posterBox">
     <Image 
+    class='poster' 
+      id={`poster-${project.slug}`}
       src={image.src} 
       loading='eager'
       inferSize
-      class='poster' 
       alt="featured"/>
   </div>
   
@@ -75,12 +76,15 @@ padding: var(--length-m);
   }
 }
 .poster{
+  		transition: all ease-in-out 0.25s;
+
+  background-color: var(--color-surface);
   aspect-ratio: 210/297;
   width: auto;
   height: auto;
   max-height: 75svh;
   max-width: 100%;
-  border: solid var(--length-m) white;
+		border: solid var(--length-s) white;
   border-radius: .1em;
     @container (width > 70ch) {
       box-shadow: 0 0 .5em  rgba(0,0,0,0.1);;
