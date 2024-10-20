@@ -2,8 +2,9 @@
 
 import Header from '../components/Header.astro';
 import '../assets/css/style.css';
+import Footer from '../components/Footer.astro';
 
-const { title, description } = Astro.props;
+const { title, description, form=true } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,14 +23,20 @@ const { title, description } = Astro.props;
 		</div>
 		<div class="content-wrapper">
 			<slot />
+
+			
+			<Footer  form={form} />
+		
 		</div>
 	</body>
 </html>
 <style>
 	.layout{
 		display: grid;
+		min-height: 100lvh;
+		grid-template-rows: min-content 1fr;
 		@media (width > 40rem) {
-			min-height: 100vh;
+			grid-template-rows: unset;
 				grid-template-columns:min(16rem, 20vw) 2fr;
 		}
 	}

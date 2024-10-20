@@ -1,5 +1,6 @@
 :root {
 	--color-surface: rgb(241, 232, 232);
+	--color-accent: hsl(28, 92%, 45%);
 	--color-text: #2d3a41;
 	--color-link: #205699;
 
@@ -29,7 +30,8 @@ body {
 	box-sizing: border-box;
 }
 
-h1 {
+h1,
+h2 {
 	text-wrap: balance;
 }
 
@@ -50,10 +52,11 @@ a {
 }
 
 .video,
-.lite-youtube {
+.lite-youtube,
+.lite-vimeo {
 	max-width: 100%;
 	background-color: black;
-	border-radius: 0.2em;
+	border-radius: 0.5em;
 }
 
 .body-image {

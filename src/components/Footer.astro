@@ -1,0 +1,71 @@
+---
+import Icon from './Icon.astro'
+import socials from '../data/socials.json'
+import Contact from './Contact.astro'
+
+const {form = true} = Astro.props;
+---
+
+<footer>
+
+	{form == true && 
+	<Contact />
+	}
+	<ul class="links">
+		{socials.map(link=><li><a href={link.url}>
+			<span class="visually-hidden">
+			{link.label}
+			</span>
+			<Icon icon={link.icon}/></a></li>)}
+	</ul>
+</footer>
+
+<style>
+	footer{
+		position: sticky;
+		top: 100%;
+		display: grid;
+		gap: var(--length-l);
+		background-color:var(--color-text);
+		color: var(--color-surface);
+		padding:var(--length-l);
+
+
+		@container (width > 40ch){
+			grid-template-columns:  1fr max-content;
+		}
+	}
+
+
+			
+			a{
+				color: currentColor;
+			}
+
+		.links{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: inline-flex;
+		gap: .5em;
+		fill: currentColor;
+		width: max-content;
+		margin: auto;
+
+		@container (width < 16rem){
+			flex-direction:column;
+		}
+		
+		@container (width > 20rem){
+			margin: 0;
+		}
+
+	}
+
+	.links a {
+		aspect-ratio: 1;
+		display: block;
+		width: 2rem;
+		height: 2rem;
+	}
+</style>

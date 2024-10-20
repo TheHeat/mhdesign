@@ -1,0 +1,121 @@
+---
+const projectTypes = [
+
+	'UI/UX', 'Motion Graphics', 'Logo', 'Illustration', "it's complicated"
+]
+---
+
+<div class="wrapper">
+	<h2>Don&CloseCurlyQuote;t be shy - say hi!</h2>
+	<p>Use this form to get in touch. You can ask me a question, request a quote, all that stuff.</p>
+	
+	<form method="POST" data-netlify="true" action="/success">
+		<div class="field">
+			<label for="email">Your email address</label>
+			<input name="email" id="email" type="email" required>
+		</div>
+
+		<div class="field">
+			<div class="label">How can I help?</div>
+
+			<ul>
+				{projectTypes.map(type=><li><label class="radio-label"><input name="project-type"  type="radio" value={type}/>{type}</label></li>)}
+			</ul>
+		
+
+		</div>
+		
+		<div class="field">
+			<label for="message">Message</label>
+			<textarea name="message" id="message" required></textarea>
+		</div>
+		<div>
+			<input class="sumbit" type="submit" value="Send"/>
+		</div>
+	</form>
+</div>
+
+<style>
+	.wrapper{	
+		max-width: 50ch;
+	}
+	
+	h2{
+		margin: 0 0 1rem;
+	}
+
+	form{
+		display: grid;
+		font-family: monospace;
+		gap: var(--length-m);
+		accent-color: var(--color-accent);
+		outline-color: 	var(--color-accent);
+	}
+	
+	label, .label{
+		display: block;
+		font-size: small;
+		text-transform: uppercase;
+		letter-spacing: .2em;
+		padding-bottom: .5em;
+		align-content: center;
+
+	}
+	
+	[type=email], 
+	textarea{
+		width: 100%;
+		border: solid thin var(--color-surface);
+		font-family: monospace;
+		font-size: 1rem;
+		background-color: var(--color-surface);
+		color: var(--color-text);
+		padding: var(--length-s);
+		border-radius: 0.2em;
+			outline-color: 	var(--color-accent);
+
+	}
+
+
+
+	input:focus,
+	textarea:focus{
+		background-color: white;
+	}
+
+	textarea{
+		min-height: 8rem;
+	}
+
+	ul{
+		list-style: none;
+		padding: 0;
+		margin:var(--length-s) 0;
+		column-width: 15ch;
+	}
+
+	.radio-label{
+		display: inline-flex;
+		align-items: center;
+	}
+	[type=radio]{
+		width: 2em;
+		height: 2em;
+		margin-right: .5em;
+	}
+
+	[type=submit]{
+		font-family: monospace;
+		width: auto;
+		line-height: 1;
+		font-size: inherit;
+		border-radius: 0.2em;
+		border: solid thin var(--color-surface);
+		background-color: var(--color-accent);
+		color: var(--color-surface);
+		padding: var(--length-s) var(--length-l);
+		border: none;
+		text-transform: uppercase;
+		letter-spacing: .2em;
+	}
+</style>

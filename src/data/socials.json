@@ -1,0 +1,14 @@
+[
+	{
+		"label": "LinkedIn",
+		"url": "https://www.linkedin.com/in/marcheatley",
+		"icon": "linkedin"
+	},
+	{ "label": "GitHub", "url": "https://github.com/theHeat", "icon": "github" },
+	{
+		"label": "CodePen",
+		"url": "https://codepen.io/TheHeat",
+		"icon": "codepen"
+	},
+	{ "label": "Figma", "url": "https://figma.com/@marcheatley", "icon": "figma" }
+]
