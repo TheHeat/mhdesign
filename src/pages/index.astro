@@ -5,6 +5,7 @@ const projects = await getCollection("projects");
 import Layout from '../layouts/Home.astro';
 import ProjectsList from '../components/ProjectsList.astro';
 import Hero from '../components/Hero.astro';
+import Tags from "../components/tags.astro";
 
 
 ---
@@ -17,6 +18,16 @@ import Hero from '../components/Hero.astro';
 	Here are some things I designed &DownArrow;</h1>
 	</Hero>
 	<ProjectsList projects={projects}/>
+
+	<div class="tags">
+		<Tags/>
+	</div>
 </Layout>
+
+<style>
+	.tags{
+		padding: var(--length-m);
+	}
+</style>
 
 

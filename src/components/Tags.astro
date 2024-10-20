@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection('projects');
+
+const allTags = allProjects.map((tag) => tag.data.tags).flat();
+const processedTags = allTags.reduce((acc, tag) => {
+  const value = acc[tag] || 0;
+  const pTags = {
+    ...acc,
+    [tag]: value + 1,
+  };
+
+  const sortedTags = Object.fromEntries(
+    Object.entries(pTags).sort((a, b) => b[1] - a[1]),
+  );
+
+  return sortedTags;
+}, {});
+
+const { showCount, displayNumber } = Astro.props;
+---
+		<ul>
+			{ Object.entries(processedTags).map(([key, val])=><li><a class="tag" href={`/tags/${key}`}>{`${key} (${val})`}</a></li>)}
+		</ul>
+	</div>
+
+<style>
+
+	ul{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		gap: var(--length-m);
+		flex-wrap: wrap;
+
+	}
+
+	.tag{
+		font-family: monospace;
+		display: block;
+		background-color: var(--color-accent);
+		color: var(--color-surface);
+		text-decoration: none;
+		padding:var(--length-s) var(--length-m);
+		border-radius: .2em;
+	}
+
+
+</style>

@@ -5,32 +5,41 @@ import BaseLayout from '../../layouts/Home.astro';
 import ProjectsList from "../../components/ProjectsList.astro";
 import Hero from "../../components/Hero.astro";
 
-export async function getStaticPaths() {
-  const allProjects = await getCollection('projects');
+export async function getStaticPaths({}) {
+  const allProjects = await getCollection("projects");
+  const sortedProjects = allProjects.sort(
+    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+  );
+  const allTags = new Set();
 
-  const uniqueTags = [...new Set(allProjects.map((project) => project.data.tags).flat())];
+  sortedProjects.map((project) => {
+    project.data.tags && project.data.tags.map((tag) => allTags.add(tag));
+  });
 
-  return uniqueTags.map((tag) => {
-    const filteredProjects = allProjects.filter((project) => project.data.tags.includes(tag));
-  
+  return Array.from(allTags).map((tag) => {
+    const filteredPosts = sortedProjects.filter((project) =>
+      project.data.tags.includes(tag.toString()),
+    );
+
     return {
       params: { tag },
-      props: { posts: filteredProjects },
+      props: {
+        projects: filteredPosts,
+      },
     };
   });
-  
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { projects } = Astro.props;
 
 ---
 <BaseLayout pageTitle={tag}>
 
   <Hero>
-    <h1>{posts.length}&times; projects tagged <span class="highlight">{tag}</span></h1>
-    <a class="lowlight" href="/">&LeftArrow; view all</a>
+    <h1>{projects.length}&times; projects tagged <span class="highlight">{tag}</span></h1>
+    <a class="lowlight" href="/tags">&LeftArrow; view all tags</a>
   </Hero>
 
-	<ProjectsList projects={posts} />
+	<ProjectsList projects={projects} />
 </BaseLayout>
