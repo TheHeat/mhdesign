@@ -23,7 +23,7 @@ const { activeTag } = Astro.props;
 
 				{activeTag && activeTag === key ? 
 				<a class="tag active" href="/#tags">{`${key} (${val})`}</a> :
-				<a class="tag" href={`/tags/${key}`}>{`${key} (${val})`}</a>
+				<a class="tag" href={`/tags/${key}#hero`}>{`${key} (${val})`}</a>
 			}
 
 
