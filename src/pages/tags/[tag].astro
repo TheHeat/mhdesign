@@ -39,10 +39,10 @@ const { projects } = Astro.props;
 const tagText = tagTexts.find(i => i['tag'] === tag)
 
 ---
-<BaseLayout pageTitle={tag}>
+<BaseLayout pageTitle={`Marc Heatley Designs: ${tag}`} description={tagText.intro}>
 
   <Hero>
-    <h1 class="littleh1">{projects.length}&times; projects tagged <span class="highlight">{tag}</span></h1>
+    <h1 class="littleh1">{tag} projects</h1>
     {tagText.intro && <p class="bigh1">{tagText.intro}</p>}
   </Hero>
 

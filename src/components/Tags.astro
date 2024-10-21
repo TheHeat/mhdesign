@@ -1,9 +1,10 @@
 ---
 import { getCollection } from "astro:content";
+import type { supportsViewTransitions } from "astro:transitions/client";
 
 const allProjects = await getCollection('projects');
 
-const allTags = allProjects.map((tag) => tag.data.tags).flat();
+const allTags = allProjects.map((tag) => tag.data.tags).flat().sort();
 const processedTags = allTags.reduce((acc, tag) => {
   const value = acc[tag] || 0;
   const pTags = {
@@ -17,15 +18,16 @@ const processedTags = allTags.reduce((acc, tag) => {
 const { activeTag } = Astro.props;
 ---
 		<ul>
-			{ Object.entries(processedTags).map(([key, val])=>
-			<li>
+			{ Object.entries(processedTags).map(([key, val])=><li>
 
-			{activeTag && activeTag === key ? 
+
+				{activeTag && activeTag === key ? 
 				<a class="tag active" href="/#tags">{`${key} (${val})`}</a> :
 				<a class="tag" href={`/tags/${key}`}>{`${key} (${val})`}</a>
 			}
-			</li>
-				)}
+
+
+				</li>)}
 		</ul>
 	</div>
 
