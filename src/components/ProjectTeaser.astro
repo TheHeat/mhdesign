@@ -10,6 +10,7 @@ const {project} = Astro.props;
 	
 	
 	<Image
+  transition:name={`poster-${project.slug}`}
 	class="poster" 
 	id={`poster-${project.slug}`}
 	loading="eager" 

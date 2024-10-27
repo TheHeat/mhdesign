@@ -3,6 +3,7 @@
 import Header from '../components/Header.astro';
 import '../assets/css/style.css';
 import Footer from '../components/Footer.astro';
+import { ViewTransitions } from 'astro:transitions';
 
 const { title, description, form=true } = Astro.props;
 ---
@@ -10,12 +11,14 @@ const { title, description, form=true } = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
+		<ViewTransitions />
 		<meta charset="UTF-8" />
 		<meta name="description" content={`${description} | MHD`} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
 	</head>
 	<body class="layout">
 		<div class="header-wrapper">

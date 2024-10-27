@@ -18,8 +18,10 @@ const image = project.data.image
 <Layout title={project.data.title} description={project.data.excerpt}>
 
   <main>
-  <div class="posterBox" id="posterBox">
-    <Image 
+  <div 
+  class="posterBox" id="posterBox">
+  <Image 
+  transition:name={`poster-${project.slug}`}
     class='poster' 
       id={`poster-${project.slug}`}
       src={image.src} 
